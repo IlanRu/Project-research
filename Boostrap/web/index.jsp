@@ -1,42 +1,129 @@
-
-
 <!doctype html>
 <html lang="en">
 <div class="container">
-<head>
-  <!-- Required meta tags -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <head>
 
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Login in page</title>
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <!------ Include the above in your HEAD tag ---------->
+  </head>
+  <div class="container">
+    <div id="loginbox" style="margin-top:50px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+      <div class="panel panel-info" >
+        <div class="panel-heading">
+          <div class="panel-title">Sign In</div>
+          <div style="float:right; font-size: 80%; position: relative; top:-10px"><a href="#">Forgot password?</a></div>
+        </div>
 
-  <title>Login in page</title>
-</head>
-<body>
-<form>
-  <div class="form-group">
-    <label for="exampleInputEmail1">Email address</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+        <div style="padding-top:30px" class="panel-body" >
+
+          <div style="display:none" id="login-alert" class="alert alert-danger col-sm-12"></div>
+
+          <form id="loginform" class="form-horizontal" role="form">
+
+            <div style="margin-bottom: 25px" class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+              <input id="login-username" type="text" class="form-control" name="username" value="" placeholder="username or email">
+            </div>
+
+            <div style="margin-bottom: 25px" class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+              <input id="login-password" type="password" class="form-control" name="password" placeholder="password">
+            </div>
+
+
+
+            <div class="input-group">
+              <div class="checkbox">
+                <label>
+                  <input id="login-remember" type="checkbox" name="remember" value="1"> Remember me
+                </label>
+              </div>
+            </div>
+
+
+            <div style="margin-top:10px" class="form-group">
+              <!-- Button -->
+
+              <div class="col-sm-12 controls">
+                <a id="btn-login" href="#" class="btn btn-success" onClick="$('html').load( 'file_upload.jsp' )">Login  </a>
+              </div>
+            </div>
+
+
+            <div class="form-group">
+              <div class="col-md-12 control">
+                <div style="border-top: 1px solid#888; padding-top:15px; font-size:85%" >
+                  Don't have an account!
+                  <a href="#" onClick="$('#loginbox').hide(); $('#signupbox').show()">
+                    Sign Up Here
+                  </a>
+                </div>
+              </div>
+            </div>
+          </form>
+
+
+
+        </div>
+      </div>
+    </div>
+    <div id="signupbox" style="display:none; margin-top:50px" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+      <div class="panel panel-info">
+        <div class="panel-heading">
+          <div class="panel-title">Sign Up</div>
+          <div style="float:right; font-size: 85%; position: relative; top:-10px"><a id="signinlink" href="#" onclick="$('#signupbox').hide(); $('#loginbox').show()">Sign In</a></div>
+        </div>
+        <div class="panel-body" >
+          <form id="signupform" class="form-horizontal" role="form">
+
+            <div id="signupalert" style="display:none" class="alert alert-danger">
+              <p>Error:</p>
+              <span></span>
+            </div>
+
+
+
+            <div class="form-group" id="email">
+              <label for="email" class="col-md-3 control-label">Email</label>
+              <div class="col-md-9">
+                <input type="text" class="form-control" name="email" placeholder="Email Address">
+              </div>
+            </div>
+
+            <div class="form-group" id="firstname">
+              <label for="firstname" class="col-md-3 control-label">First Name</label>
+              <div class="col-md-9">
+                <input type="text" class="form-control" name="firstname" placeholder="First Name">
+              </div>
+            </div>
+            <div class="form-group" id="lastname">
+              <label for="lastname" class="col-md-3 control-label">Last Name</label>
+              <div class="col-md-9">
+                <input type="text" class="form-control" name="lastname" placeholder="Last Name">
+              </div>
+            </div>
+            <div class="form-group" id="password">
+              <label for="password" class="col-md-3 control-label">Password</label>
+              <div class="col-md-9">
+                <input type="password" class="form-control" name="passwd" placeholder="Password">
+              </div>
+            </div>
+            <div class="form-group">
+              <!-- Button -->
+              <div class="col-md-offset-3 col-md-9">
+                <button id="btn-signup" type="button" class="btn btn-info"><i class="icon-hand-right"></i> &nbsp Sign Up</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+
+
+
+
+    </div>
   </div>
-  <div class="form-group">
-    <label for="exampleInputPassword1">Password</label>
-    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-  </div>
-  <div class="form-check">
-    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-    <label class="form-check-label" for="exampleCheck1">Check me out</label>
-  </div>
-  <button type="submit" class="btn btn-primary">Submit</button>
-</form>
-
-<!-- Optional JavaScript -->
-<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-</body>
-
 </div>
-</html>
