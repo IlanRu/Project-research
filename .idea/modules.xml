@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Bcrypt/Bcrypt.iml" filepath="$PROJECT_DIR$/Bcrypt/Bcrypt.iml" />
+      <module fileurl="file://$PROJECT_DIR$/JavaCV/JavaCV.iml" filepath="$PROJECT_DIR$/JavaCV/JavaCV.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MongoDb/MongoDb.iml" filepath="$PROJECT_DIR$/MongoDb/MongoDb.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Tesseract/Tesseract.iml" filepath="$PROJECT_DIR$/Tesseract/Tesseract.iml" />
+    </modules>
+  </component>
+</project>
